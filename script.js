@@ -1,48 +1,52 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-}
+// Ініціалізація Firebase
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set, push, onValue } from "firebase/database";
 
-header {
-    background-color: #0044cc;
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-}
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
 
-main {
-    margin: 20px;
-}
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 
-section {
-    margin-bottom: 30px;
-}
+// Додавання новин
+document.getElementById('add-news-btn').addEventListener('click', function() {
+    const title = document.getElementById('news-title').value;
+    const content = document.getElementById('news-content').value;
 
-h2 {
-    color: #0044cc;
-}
+    if (title && content) {
+        const newsRef = ref(database, 'news/');
+        const newNewsRef = push(newsRef);
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        set(newNewsRef, {
+            title: title,
+            content: content,
+            timestamp: new Date().toISOString()
+        });
 
-input, textarea, button {
-    padding: 10px;
-    font-size: 16px;
-}
+        document.getElementById('news-title').value = '';
+        document.getElementById('news-content').value = '';
+    } else {
+        alert('Заповніть всі поля!');
+    }
+});
 
-button {
-    background-color: #0044cc;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
+// Отримання новин
+const newsContainer = document.getElementById('news-container');
+const newsRef = ref(database, 'news/');
 
-button:hover {
-    background-color: #003399;
-}
+onValue(newsRef, (snapshot) => {
+    newsContainer.innerHTML = '';
+    snapshot.forEach((childSnapshot) => {
+        const newsItem = childSnapshot.val();
+        const newsElement = document.createElement('div');
+        newsElement.innerHTML = `<h3>${newsItem.title}</h3><p>${newsItem.content}</p><small>${newsItem.timestamp}</small>`;
+        newsContainer.appendChild(newsElement);
+    });
+});
