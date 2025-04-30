@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новини Військкомату Городківки</title>
+    <link rel="stylesheet" href="stylenews.css">
+</head>
+<body>
+    <header>
+        <h1>Військкомат Городківки</h1>
+    </header>
+    <main>
+        <section id="news">
+            <h2>Новини</h2>
+            <div id="news-container">
+                <!-- Новини будуть додаватися сюди через форму адміністратора -->
+            </div>
+        </section>
+        <section id="admin-panel">
+            <h2>Панель адміністратора</h2>
+            <form id="news-form">
+                <label for="news-title">Заголовок:</label>
+                <input type="text" id="news-title" name="news-title" required>
+                <label for="news-content">Новина:</label>
+                <textarea id="news-content" name="news-content" required></textarea>
+                <button type="button" id="add-news-btn">Додати новину</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Військкомат Городківки. Всі права захищено.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
