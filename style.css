@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Змініть на бажаний колір */
+    text-align: center; /* Робить текст усього документа по центру */
+}
+
+header {
+    background: url('photo.jpg') no-repeat center/cover;
+    height: 200px; /* Висота шапки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Центрує текст у шапці */
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center; /* Центрує меню навігації */
+    gap: 20px; /* Відстань між посиланнями */
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+main {
+    text-align: center; /* Центрує текст у головному контенті */
+}
+
+footer {
+    text-align: center; /* Центрує текст у підвалі */
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+}
