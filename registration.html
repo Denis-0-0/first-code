@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація до військкомату</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <header>
+        <h1>Реєстрація до ТЦК</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Заповніть форму для реєстрації</h2>
+            <form action="mailto:ll7267528@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Ваше ім'я:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Ваш Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+
+                <label for="address">Адреса:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+
+                <button type="submit">Відправити</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 ТЦК Городківки. Всі права захищені.</p>
+    </footer>
+</body>
+</html>
