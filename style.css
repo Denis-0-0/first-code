@@ -42,7 +42,7 @@ nav a:hover {
 
 main {
     background-image: url('photo_of_military.jpg');
-    z-index: 20;
+    z-index: -1;
     text-align: center; 
     position: relative;
     background-color: rgba(235, 28, 28, 0);
