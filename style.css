@@ -42,7 +42,8 @@ nav a:hover {
 
 main {
     background-image: url('photo_of_military.jpg');
-    background-repeat: no-repeat; /* Запобігає повторенню зображення */
+    background-repeat: no-repeat;
+    background-position: center;
     text-align: center; 
     position: relative;
     background-color: rgba(235, 28, 28, 0);
