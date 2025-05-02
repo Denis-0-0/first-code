@@ -42,7 +42,12 @@ nav a:hover {
 
 main {
     background-image: url('photo_of_military.jpg');
-    text-align: center; /* Центрує текст у головному контенті */
+    z-index: 20;
+    text-align: center; 
+    position: relative;
+    background-color: rgba(235, 28, 28, 0);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 footer {
